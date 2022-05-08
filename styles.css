@@ -16,6 +16,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     text-align: center;
     background: #FAFAFA;
+    overflow-x: hidden;
 }
 
 button {
@@ -73,6 +74,8 @@ header {
     background: hsl(0, 0%, 100%);
     height: 60px;
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,7 +154,7 @@ li a {
 }
 
 .req-invite-btn:hover {
-    opacity: .7;
+    opacity: .8;
 }
 
 header .req-invite-btn {
@@ -160,26 +163,13 @@ header .req-invite-btn {
 
 /* Home section*/
 .home {
-    overflow: hidden;
+    background: url(./images/bg-intro-mobile.svg) no-repeat;
+    background-size: contain;
+    background-position-y: 29px;
 }
 
-.home-img-one {
-    background: url(./images/bg-intro-mobile.svg) no-repeat 0 19px;
-    position: relative;
-    height: 405px;
-    background-size: cover;
-}
-
-.home-img-two {
-    position: absolute;
-    top: -18%;
-    left: 0%;
-    right: 1%;
-}
-
-.home-img-two img {
-    width: 376px;
-    margin: 0 auto;
+.home-content {
+    margin-top: 0;
 }
 
 .home h1 {
@@ -187,11 +177,15 @@ header .req-invite-btn {
     color: hsl(233, 26%, 24%);
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin: 4rem 0 1rem;
+}
+
+.home-img {
+    margin-top: -52px;
 }
 
 .home-texts a {
-    margin: 2rem 0 6rem;
+    margin: 3rem 0 6rem;
 }
 
 /*Reason Section*/
@@ -286,6 +280,11 @@ footer a:hover {
 
 .socials img {
     width: 25px;
+    transition: all 0.5s ease;
+}
+
+.socials a img:hover {
+    filter: invert(33%) sepia(8%) saturate(2989%) hue-rotate(110deg) brightness(105%) contrast(103%);
 }
 
 footer li {
@@ -320,8 +319,39 @@ footer li {
         height: 80px;
     }
 
+    nav li a {
+        padding: 1.65rem 0.5rem;
+    }
+
+    .home {
+        padding-bottom: 5rem;
+        background: url(./images/bg-intro-desktop.svg) no-repeat;
+        background-size: cover;
+        background-position: 23.6rem -1rem;
+    }
+
+    .home-content {
+        display: flex;
+        gap: 4rem;
+    }
+
+    .home-texts {
+        max-width: 415px;
+        width: 52%;
+        margin-top: 10rem;
+    }
+
+    .home-img {
+        order: 2;
+        margin-top: 0;
+        position: absolute;
+        top: -2.5rem;
+        right: -8rem;
+        width: 52%;
+    }
+
     .container .req-invite-btn {
-        display: block
+        display: inline-block;
     }
 
 nav {
@@ -353,16 +383,11 @@ nav li {
         border-bottom: 3px solid rgb(49,211,92);
     }
 
-.home-img-one {
-    width: 100%;
-    order: 2;
-    }
-
 .home-flex {
     display: flex;
     justify-content: space-between;
     gap: 5rem;
-    margin-left: 9rem;
+    margin-left: 3.3rem;
 }
 
 h2 {
@@ -427,6 +452,10 @@ h2 {
     .container-footer {
         gap: 6rem !important;
     }
+
+    .home {
+        background-position: 35.6rem -12rem;
+    }
 }
 
 @media (min-width: 950px) {
@@ -434,7 +463,7 @@ h2 {
         gap: 4rem !important;
     }
 
-    nav li a {
-        padding: 1.72rem 0.5rem;
+    .home h1 {
+        font-size: 3rem;
     }
 }
